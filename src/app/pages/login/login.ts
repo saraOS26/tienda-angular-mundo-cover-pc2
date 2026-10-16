@@ -1,9 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
-  imports: [],
   selector: 'app-login',
-  styleUrl: './login.css',
+  imports: [FormsModule, NgIf],
   templateUrl: './login.html',
+  styleUrl: './login.css',
 })
-export class Login {}
+export class Login {
+  private auth = inject(AuthService);
+  private router = inject(Router);
+
+  correo = '';
+  password = '';
+  error = '';
+
+  ingresar(): void {
+    if (this.auth.iniciarSesion(this.correo, this.password)) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      this.error = 'Correo o contraseña incorrectos.';
+    }
+  }
+}

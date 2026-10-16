@@ -7,14 +7,25 @@
     <div class="collapse navbar-collapse" id="menu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li class="nav-item"><a class="nav-link" routerLink="/productos" routerLinkActive="active">Productos</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/ofertas" routerLinkActive="active">Ofertas</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/tienda" routerLinkActive="active">Tienda</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a></li>
         <li class="nav-item"><a class="nav-link" routerLink="/mi-cuenta" routerLinkActive="active">Mi Cuenta</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li class="nav-item" *ngIf="auth.usuario() === null">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="auth.usuario() !== null">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li class="nav-item" *ngIf="auth.usuario() !== null">
+          <button type="button" class="btn btn-outline-light btn-sm ms-lg-2" (click)="cerrarSesion()">
+            Cerrar sesión
+          </button>
+        </li>
       </ul>
     </div>
   </div>

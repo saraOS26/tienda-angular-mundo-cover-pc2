@@ -1,1 +1,21 @@
-<p>productos works!</p>
+<h2 class="mb-4">Productos</h2>
+
+<div *ngIf="productos().length === 0" class="alert alert-info">
+  No hay productos para mostrar. Revisa que JSON Server esté encendido.
+</div>
+
+<div class="row g-4">
+  <div class="col-12 col-sm-6 col-lg-3" *ngFor="let p of productos()">
+    <div class="card h-100">
+      <img [src]="p.imagen" [alt]="p.nombre" class="card-img-top">
+      <div class="card-body">
+        <span class="badge bg-secondary mb-2">{{ p.categoria | uppercase }}</span>
+        <h5 class="card-title">{{ p.nombre }}</h5>
+        <p class="card-text fw-bold">{{ p.precio | currency:'PEN':'S/ ' }}</p>
+        <p class="card-text" [ngClass]="{ 'text-danger': p.stock < 10, 'text-success': p.stock >= 10 }">
+          Stock: {{ p.stock }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

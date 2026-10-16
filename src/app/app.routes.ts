@@ -8,6 +8,7 @@ import { MiCuenta } from './pages/mi-cuenta/mi-cuenta';
 import { Login } from './pages/login/login';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { NotFound } from './pages/not-found/not-found';
+import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -17,6 +18,6 @@ export const routes: Routes = [
   { path: 'contacto', component: Contacto },
   { path: 'mi-cuenta', component: MiCuenta },
   { path: 'login', component: Login },
-  { path: 'dashboard', component: Dashboard },
+  { path: 'dashboard', component: Dashboard, canActivate: [authGuard] },
   { path: '**', component: NotFound },
 ];
