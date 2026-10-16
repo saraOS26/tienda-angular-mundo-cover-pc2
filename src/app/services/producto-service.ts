@@ -1,6 +1,6 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, isDevMode } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 export interface ProductoItem {
   id: number;
@@ -16,9 +16,13 @@ export interface ProductoItem {
 @Injectable({ providedIn: 'root' })
 export class ProductoService {
   private http = inject(HttpClient);
-  private url = 'http://localhost:3000/productos';
 
   obtenerProductos(): Observable<ProductoItem[]> {
-    return this.http.get<ProductoItem[]>(this.url);
+    if (isDevMode()) {
+      return this.http.get<ProductoItem[]>('http://localhost:3000/productos');
+    }
+    return this.http
+      .get<{ productos: ProductoItem[] }>('/db.json')
+      .pipe(map((datos) => datos.productos));
   }
 }
