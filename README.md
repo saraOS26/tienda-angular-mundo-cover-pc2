@@ -1,59 +1,68 @@
-# TiendaAngular
+# Mundo Cover - Tienda de celulares y accesorios
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
+Aplicación web tipo e-commerce desarrollada con Angular para el curso **JavaScript Avanzado** (PC2) de la Universidad Tecnológica del Perú (UTP).
 
-## Development server
+Mundo Cover es una tienda de celulares, cargadores, fundas, baterías portátiles y otros accesorios.
 
-To start a local development server, run:
+## Integrante
 
-```bash
+- Sara Daniela Ospina Hernandez
+
+## Enlaces
+
+- **Proyecto desplegado:** https://tienda-angular-mundo-cover-pc2.vercel.app/
+- **Repositorio:** https://github.com/saraOS26/tienda-angular-mundo-cover-pc2
+
+## Tecnologías
+
+- Angular
+- TypeScript
+- Bootstrap
+- HTML y CSS
+- JSON Server (base de datos simulada)
+- Vercel (despliegue)
+
+## Funcionalidades
+
+- Navbar y footer reutilizables (arquitectura basada en componentes).
+- Páginas: Home, Productos, Ofertas, Tienda, Contacto, Mi Cuenta, Login, Dashboard y página 404 personalizada.
+- Navegación con Angular Routing.
+- Login simulado con `ngModel`, validaciones y LocalStorage.
+- Dashboard protegido: si no hay sesión, redirige al Home.
+- Opción de cerrar sesión.
+- Productos cargados dinámicamente desde `db.json` mediante un servicio de Angular.
+- Data binding (interpolación, property binding, event binding y two-way binding).
+- Directivas `*ngFor`, `*ngIf`, `[ngClass]` y `[ngStyle]`.
+- Pipes: `currency`, `uppercase` y `date`.
+- Diseño responsive con Bootstrap (grid, cards, navbar, formularios, botones y tablas).
+
+## Cómo ejecutar el proyecto
+
+1. Instalar las dependencias:
+
+```
+npm install
+```
+
+2. Levantar JSON Server (primera terminal):
+
+```
+npx json-server --watch db.json --port 3000
+```
+
+3. Levantar Angular (segunda terminal):
+
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Abrir `http://localhost:4200` en el navegador.
 
-## Code scaffolding
+## Usuario de prueba
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Correo:** admin@mundocover.com
+- **Contraseña:** 123456
 
-```bash
-ng generate component component-name
-```
+## Despliegue
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+El proyecto está desplegado en Vercel. En la versión en línea, los productos se leen desde el archivo `public/db.json`; en desarrollo se leen desde JSON Server.
