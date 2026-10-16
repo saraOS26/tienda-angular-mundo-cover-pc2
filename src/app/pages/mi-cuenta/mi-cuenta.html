@@ -1,1 +1,10 @@
-<p>mi-cuenta works!</p>
+<h2 class="mb-3">Mi Cuenta</h2>
+
+<div class="card p-3" *ngIf="auth.usuario() !== null">
+  <p class="mb-1"><strong>Nombre:</strong> {{ auth.usuario()?.nombre }}</p>
+  <p class="mb-0"><strong>Correo:</strong> {{ auth.usuario()?.correo }}</p>
+</div>
+
+<div class="alert alert-warning" *ngIf="auth.usuario() === null">
+  No has iniciado sesión. <a routerLink="/login">Ingresa aquí</a>.
+</div>

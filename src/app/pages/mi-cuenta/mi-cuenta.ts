@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
-  imports: [],
   selector: 'app-mi-cuenta',
-  styleUrl: './mi-cuenta.css',
+  imports: [NgIf, RouterLink],
   templateUrl: './mi-cuenta.html',
+  styleUrl: './mi-cuenta.css',
 })
-export class MiCuenta {}
+export class MiCuenta {
+  auth = inject(AuthService);
+}

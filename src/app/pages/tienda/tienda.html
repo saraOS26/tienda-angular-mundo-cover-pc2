@@ -1,1 +1,12 @@
-<p>tienda works!</p>
+<h2 class="mb-3">Nuestra tienda</h2>
+<p>Mundo Cover es una tienda de celulares y accesorios ubicada en Arequipa.</p>
+
+<h5 class="mt-4">¿Qué encontrarás?</h5>
+<div class="row g-3">
+  <div class="col-6 col-md-4 col-lg-3" *ngFor="let c of categorias">
+    <div class="card text-center p-3 h-100">
+      <h6 class="mb-3">{{ c }}</h6>
+      <a class="btn btn-sm btn-primary" routerLink="/productos">Ver productos</a>
+    </div>
+  </div>
+</div>

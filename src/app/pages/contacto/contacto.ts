@@ -1,9 +1,23 @@
 import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports: [],
   selector: 'app-contacto',
-  styleUrl: './contacto.css',
+  imports: [FormsModule, NgIf],
   templateUrl: './contacto.html',
+  styleUrl: './contacto.css',
 })
-export class Contacto {}
+export class Contacto {
+  nombre = '';
+  correo = '';
+  mensaje = '';
+  enviado = false;
+
+  enviar(): void {
+    this.enviado = true;
+    this.nombre = '';
+    this.correo = '';
+    this.mensaje = '';
+  }
+}

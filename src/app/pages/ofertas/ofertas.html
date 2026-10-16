@@ -1,1 +1,22 @@
-<p>ofertas works!</p>
+<h2 class="mb-4">Ofertas</h2>
+
+<div *ngIf="ofertas().length === 0" class="alert alert-info">
+  No hay ofertas por ahora.
+</div>
+
+<div class="row g-4">
+  <div class="col-12 col-sm-6 col-lg-4" *ngFor="let p of ofertas()">
+    <div class="card h-100">
+      <img [src]="p.imagen" [alt]="p.nombre" class="card-img-top">
+      <div class="card-body">
+        <span class="badge bg-danger mb-2">-{{ p.descuento }}%</span>
+        <span class="badge bg-secondary mb-2 ms-1">{{ p.categoria | uppercase }}</span>
+        <h5 class="card-title">{{ p.nombre }}</h5>
+        <p class="mb-1 text-muted" [ngStyle]="{ 'text-decoration': 'line-through' }">
+          {{ p.precio | currency:'PEN':'S/ ' }}
+        </p>
+        <p class="fw-bold fs-5 text-danger">{{ precioFinal(p) | currency:'PEN':'S/ ' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
