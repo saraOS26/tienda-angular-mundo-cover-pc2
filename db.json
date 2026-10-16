@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "iPhone 17 Pro Max",
-      "imagen": "https://placehold.co/400x300?text=iPhone+17+Pro+Max",
+      "imagen": "img/iphone-17-pro-max.jpg",
       "categoria": "Celulares",
       "precio": 6279,
       "stock": 5,
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "nombre": "Xiaomi Redmi Note 13",
-      "imagen": "https://placehold.co/400x300?text=Redmi+Note+13",
+      "imagen": "img/redmi-note-13.jpg",
       "categoria": "Celulares",
       "precio": 899,
       "stock": 12,
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "nombre": "Motorola Moto G23",
-      "imagen": "https://placehold.co/400x300?text=Moto+G23",
+      "imagen": "img/moto-g23.jpg",
       "categoria": "Celulares",
       "precio": 599,
       "stock": 8,
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "nombre": "Teclado mecánico Redragon K552",
-      "imagen": "https://placehold.co/400x300?text=Teclado+Redragon",
+      "imagen": "img/teclado-redragon.jpg",
       "categoria": "Teclados",
       "precio": 232,
       "stock": 20,
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "nombre": "Adaptador de corriente Apple USB-C 20 W",
-      "imagen": "https://placehold.co/400x300?text=Adaptador+20W",
+      "imagen": "img/adaptador-20w.webp",
       "categoria": "Cargadores",
       "precio": 139,
       "stock": 30,
@@ -53,7 +53,7 @@
     {
       "id": 6,
       "nombre": "Funda transparente antigolpes",
-      "imagen": "https://placehold.co/400x300?text=Funda+antigolpes",
+      "imagen": "img/funda-antigolpes.webp",
       "categoria": "Fundas",
       "precio": 29,
       "stock": 80,
@@ -63,7 +63,7 @@
     {
       "id": 7,
       "nombre": "Funda con tapa tipo billetera",
-      "imagen": "https://placehold.co/400x300?text=Funda+billetera",
+      "imagen": "img/funda-billetera.jpg",
       "categoria": "Fundas",
       "precio": 39,
       "stock": 35,
@@ -73,7 +73,7 @@
     {
       "id": 8,
       "nombre": "Batería portátil 10000 mAh",
-      "imagen": "https://placehold.co/400x300?text=Bateria+10000",
+      "imagen": "img/bateria-10000.webp",
       "categoria": "Baterías portátiles",
       "precio": 79,
       "stock": 25,
