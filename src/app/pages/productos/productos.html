@@ -1,11 +1,33 @@
 <h2 class="mb-4">Productos</h2>
 
+<div class="row g-3 mb-4">
+  <div class="col-12 col-md-6">
+    <input type="text" class="form-control" placeholder="Buscar producto..."
+           [(ngModel)]="busqueda">
+  </div>
+  <div class="col-8 col-md-4">
+    <select class="form-select" [(ngModel)]="categoriaSeleccionada">
+      <option value="">Todas las categorías</option>
+      <option *ngFor="let c of categorias" [value]="c">{{ c }}</option>
+    </select>
+  </div>
+  <div class="col-4 col-md-2">
+    <button type="button" class="btn btn-outline-secondary w-100" (click)="limpiarFiltros()">
+      Limpiar
+    </button>
+  </div>
+</div>
+
 <div *ngIf="productos().length === 0" class="alert alert-info">
   No hay productos para mostrar. Revisa que JSON Server esté encendido.
 </div>
 
+<div *ngIf="productos().length > 0 && productosFiltrados.length === 0" class="alert alert-warning">
+  No se encontraron productos con ese filtro.
+</div>
+
 <div class="row g-4">
-  <div class="col-12 col-sm-6 col-lg-3" *ngFor="let p of productos()">
+  <div class="col-12 col-sm-6 col-lg-3" *ngFor="let p of productosFiltrados">
     <div class="card h-100">
       <img [src]="p.imagen" [alt]="p.nombre" class="card-img-top">
       <div class="card-body">
